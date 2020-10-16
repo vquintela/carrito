@@ -1,0 +1,59 @@
+<div class="container p-4" id="contenedor">
+    <div class="row" id="App">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Agregar Producto</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/productos/crear" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" class="form-control">
+                            <span class="text-danger">{{e.nombre}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="precio" id="precio" placeholder="Precio" class="form-control">
+                            <span class="text-danger">{{e.precio}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" class="form-control">
+                            <span class="text-danger">{{e.descripcion}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="image" id="imagen" class="form-control-file">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="stock" id="stock" placeholder="Cantidad" class="form-control">
+                            <span class="text-danger">{{e.stock}}</span>
+                        </div>
+                        <div class="form-group">
+                            <select name="id_categoria" class="form-control">
+                                {{#each categorias}}
+                                    <option value="{{id}}">{{nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success mr-4">Guardar</button>
+                            <a href="/productos" class="btn btn-sm btn-light">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div id="preview">
+                    <img class="card-img-top" src="../img/sinimagen.png" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="title-card"></h5>
+                    <p class="card-text" id="descripcion-card"></p>
+                    <p class="card-text" id="precio-card"></p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/productos.js"></script>

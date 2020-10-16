@@ -1,0 +1,35 @@
+<div class="container p-4" id="contenedor">
+    <div class="row" id="App">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Crear Usuario</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/usuarios/crear">
+                        <div class="form-group">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
+                            <span class="text-danger">{{e.nombre}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control">
+                            <span class="text-danger">{{e.apellido}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                            <span class="text-danger">{{e.email}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                            <span class="text-danger">{{e.password}}</span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Crear</button>
+                            <a href="/usuarios" class="btn btn-sm btn-light">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

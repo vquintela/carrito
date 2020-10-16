@@ -1,0 +1,61 @@
+<div class="container p-4" id="contenedor">
+    <div class="row" id="App">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>Editar Producto</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/productos/editar/{{prod.id}}" enctype="multipart/form-data">
+                        <input type="hidden" name="oldimg"  value="{{prod.image}}">
+                        <div class="form-group">
+                            <input type="text" name="nombre" value="{{prod.nombre}}" id="nombre" placeholder="Nombre del producto" class="form-control">
+                            <span class="text-danger">{{e.nombre}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="precio" value="{{prod.precio}}" id="precio" placeholder="Precio" class="form-control">
+                            <span class="text-danger">{{e.precio}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="descripcion" value="{{prod.descripcion}}" id="descripcion" placeholder="Descripcion" class="form-control">
+                            <span class="text-danger">{{e.descripcion}}</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="image" id="imagen" class="form-control-file">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="stock" value="{{prod.stock}}" id="stock" placeholder="Cantidad" class="form-control">
+                            <span class="text-danger">{{e.stock}}</span>
+                        </div>
+                        <div class="form-group">
+                            <select name="id_categoria" class="form-control">
+                                <option value="{{prod.id_categoria}}">{{prod.categorium.nombre}}</option>
+                                {{#each categorias}}
+                                    <option value="{{id}}">{{nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Editar</button>
+                            <a href="/productos" class="btn btn-sm btn-light">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div id="preview">
+                    <img class="card-img-top" src="../../img/{{prod.image}}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="title-card">{{prod.nombre}}</h5>
+                    <p class="card-text" id="descripcion-card">{{prod.descripcion}}</p>
+                    <p class="card-text" id="precio-card">{{prod.precio}}</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/productos.js"></script>

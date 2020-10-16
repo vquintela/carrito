@@ -1,0 +1,42 @@
+<div class="col-md-12 mt-4 pr-5">   
+    <div class="d-flex align-items-center"> 
+        <div>
+            <h3 class="pl-5">USUARIOS</h3>
+        </div>
+        <div class="d-flex ml-auto align-items-center">
+            <a class="btn btn-block btn-primary mr-2" href="/usuarios/crear"><i class="fas fa-tasks text-white"></i> Crear</a>
+        </div>
+    </div>
+    <div class="p-4" id="contenedor">
+        <div class="row justify-content-betwen" id="App">
+            <table class="table text-center" id="filas">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody  id="insertar-filas">
+                    {{#each usuarios}}
+                    <tr>
+                        <th>{{id}}</th>
+                        <th>{{nombre}}</th>
+                        <th>{{apellido}}</th>
+                        <th>{{email}}</th>
+                        <th>
+                            <button class="btn btn-success editar" data-id="{{id}}">Editar</button>
+                            <button class="btn btn-danger eliminar" data-id="{{id}}">Eliminar</button>
+                        </th>
+                    </tr>
+                    {{else}}
+                        <tr><p>No hay Usuarios</p></tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="module" src="js/usuarios-view.js"></script>

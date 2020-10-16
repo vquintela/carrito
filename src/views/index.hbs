@@ -1,0 +1,32 @@
+<div class="bg-secondary">
+    <div class="d-flex flex-row justify-content-around container">
+        {{#each categorias}}
+        <div class="mt-2 mb-2">
+            <a href="/{{id}}" class="text-white text-decoration-none"><h3>{{nombre}}</h3></a>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div class="container" id="contenedor">
+    <div class="row mt-2" id="contenedor-hijo">
+        {{#each productos}}
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-header bg-ligth">
+                    <h2 class="text-center">{{categorium.nombre}}</h2>
+                </div>
+                <div style="background-image: url('../../img/{{image}}');" class="img-card imagen-producto" data-id="{{id}}">
+                </div>
+                <div class="card-body text-center">
+                    <hr>
+                    <h3 class="card-title text-center" id="title-card">{{nombre}}</h3>
+                    <h5 class="card-text" id="descripcion-card">{{descripcion}}</h5>
+                    <h5 class="card-text pb-3" id="precio-card">Precio: ${{precio}}</h5>
+                    <button class="btn btn-primary btn-block agregar-carrito" data-id="{{id}}"><i class="fas fa-shopping-cart mr-2"></i>Agregar</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<script src="js/index-productos.js"></script>
